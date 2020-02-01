@@ -1,11 +1,13 @@
 spring:
   datasource:
-    driver-class-name: org.postgresql.Driver
-    url: jdbc:postgresql://localhost:5432/anotherone
-    username: anotherone
-    password: anotherone
+    url: jdbc:postgresql://localhost:5432/AUCTION
+    username: postgres
+    password: postgres
+
+    hikari:
+      connection-timeout: 20000
+      maximum-pool-size: 5
   jpa:
     generate-ddl: true
-    database-platform: org.hibernate.dialect.PostgreSQLDialect
-  server:
-    port: 8083
+    database-platform: org.hibernate.dialect.PostgreSQL9Dialect
+    properties.hibernate.temp.use_jdbc_metadata_defaults: false
